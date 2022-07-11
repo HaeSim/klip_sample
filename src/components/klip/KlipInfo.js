@@ -20,11 +20,11 @@ const KlipInfo = () => {
 
     const onClickCard = useCallback(() => {
         if(!isLoggedIn) {
-            alert('로그인이 필요합니다..')
+            alert('plz login....')
             return false;
         }
         if(type !== 'klip') {
-            alert('klip 지갑으로 로그인해야합니다..')
+            alert('plz login.. by klip wallet.')
             return false;
         }
         dispatch(getCardKlip(info.address));
@@ -37,7 +37,7 @@ const KlipInfo = () => {
             textAlign: 'center'
         }}>
             <h2>Klip Card List</h2>
-            <button onClick={() => onClickCard()}> 카드확인</button>
+            <button onClick={() => onClickCard()}> Load Card</button>
             <h4>| card Info |</h4>
             <CardListWrapper load={klipInfo.isCardLoading}>
                 {cardList}

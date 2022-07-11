@@ -11,7 +11,7 @@ const WalletKlip = () => {
 
     const onClickConnect = useCallback(async () => {
         if(isLoggedIn) {
-            alert('이미 로그인되어있습니다.')
+            alert('already logged in...')
             return false;
         }
         dispatch(prepareKlip());
@@ -25,7 +25,7 @@ const WalletKlip = () => {
             textAlign: 'center'
         }}>
             <h2>Klip Wallet Connect</h2>
-            {isLoggedIn ? null : <button onClick={() => onClickConnect()}> 연결</button>}
+            {isLoggedIn ? null : <button onClick={() => onClickConnect()}> login</button>}
             <h4>| status |</h4>
             <h5>{klipInfo.status}</h5>
             {isLoggedIn ? null : <h4>| request_key |</h4>}
